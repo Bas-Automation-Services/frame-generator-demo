@@ -10,7 +10,7 @@ It's a teaching reference with no external dependencies.
 
 | Part | Topic | Demonstrated in |
 |------|-------|-----------------|
-| [Part 1 — The Data Model](https://basautomationservices.com/blog/inside-frame-generator-1-data-model) | `com.autodesk.FG` attribute set, native occurrence, reference keys | `FgBeam.cs`, `ReferenceKeys.cs` |
+| [Part 1 — The Data Model](https://basautomationservices.com/blog/inside-frame-generator-1-data-model) | `com.autodesk.FG` attribute set, native occurrence, reference keys | `FgBeam.cs`, `ReferenceKeys.cs`, `docs/FrameGeneratorSkeleton.cs` |
 | [Part 2 — Tracking Edits](https://basautomationservices.com/blog/inside-frame-generator-2-tracking-edits) | reconstructing a "frame edited" signal from events | `FrameEditWatcher.cs` |
 | [Part 3 — Surviving Replacement](https://basautomationservices.com/blog/inside-frame-generator-3-surviving-replacement) | GUID-tag dependents, rebind keys forward, rebuild `kDriverLostHealth` constraints | `Tags.cs`, `EndplateRecovery.cs` |
 
@@ -46,6 +46,18 @@ The point is to watch a dependent survive a profile change. Three steps:
    re-attaches to the new, larger beam.
 
 `docs/walkthrough.md` runs the same steps with the under-the-hood detail.
+
+## Skeleton classes
+
+`docs/FrameGeneratorSkeleton.cs` (not part of the build) holds the classes for
+deserializing the `Frame.Skeletons` XML payload that Frame Generator stores in the
+`com.autodesk.FG` attribute set on a frame assembly definition — see Part 1. Generated
+with Visual Studio's *Edit → Paste Special → Paste XML As Classes* on a sample payload,
+then trimmed and renamed. Covers `FrameStructure` / `Skeleton` / `Path` /
+`FrameMemberData` / `FrameMemberDefinition` / `Orientation` plus end-treatment types.
+The namespace is `FrameStiffener.Core.Shared.Assembly.FG` because that's the project it
+was extracted from; rename freely. (It used to live in the separate
+`inside-frame-generator` repo, now archived.)
 
 ## Build
 
