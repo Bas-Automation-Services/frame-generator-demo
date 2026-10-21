@@ -119,6 +119,10 @@ along with each rebuilt constraint (name + entities). A single FG change applies
 is exactly **one target section** regardless of how many beams (and endplates) were
 touched. See `docs/walkthrough.md` for a step-by-step run.
 
+## About
+
+Made by [Bas Automation Services](https://basautomationservices.com): Autodesk Inventor add-ins and CAD automation from Rotterdam.
+
 ## License
 
 MIT — see `LICENSE`.
